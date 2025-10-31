@@ -5,7 +5,144 @@
   font-family: Arial, Helvetica, sans-serif;
 }
 
+:root {
+  --favorit-blue: rgb(52, 52, 232);
+}
+
 body {
-  background-color: #1a1a1a;
+  background-color: #111828;
   color: #fff;
+  padding: 10px 20px;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.new-book-btn-container {
+  display: flex;
+  justify-content: center;
+}
+
+.new-book-btn {
+  border: none;
+  padding: 10px;
+  background-color: var(--favorit-blue);
+  color: white;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.library-container {
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: repeat(3, 250px);
+  gap: 35px;
+  justify-content: space-around;
+  padding: 15px;
+
+  /* MEDIA QUERIES */
+  @media (width <= 900px) {
+    grid-template-columns: repeat(2, 250px);
+  }
+
+  @media (width <= 600px) {
+    grid-template-columns: repeat(1, 250px);
+  }
+}
+
+.library-unit-card {
+  background-color: rgb(244, 170, 34);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 15px;
+  border-radius: 8px;
+  max-height: fit-content;
+  position: relative;
+}
+
+.library-unit-card h2 {
+  max-width: 80%;
+}
+
+.library-unit-card .isRead-para {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.library-unit-card .isRead-para .change-read-status-btn {
+  font-size: 12px;
+  background-color: var(--favorit-blue);
+  padding: 5px;
+  border-radius: 3px;
+}
+
+.library-unit-card .remove-book-btn {
+  position: absolute;
+  top: 7px;
+  right: 10px;
+  font-size: 22px;
+}
+
+.dialog {
+  width: 560px;
+  padding: 10px 20px;
+  background-color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 8px;
+}
+
+.dialog .headline {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: var(--favorit-blue);
+}
+
+.dialog .unit-input-field {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  margin-bottom: 1.5rem;
+}
+
+.dialog .unit-input-field label {
+  font-size: large;
+}
+
+.dialog .unit-input-field input {
+  height: 30px;
+  padding: 10px;
+  outline-color: var(--favorit-blue);
+  border-radius: 5px;
+  border: none;
+  background-color: #e7e7e7;
+  outline: none;
+}
+
+.dialog .unit-input-field select {
+  width: fit-content;
+  outline: none;
+  padding: 1px;
+}
+
+.dialog .submit-btn-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.dialog .submit-modal-btn {
+  background-color: var(--favorit-blue);
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
 }

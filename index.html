@@ -8,6 +8,62 @@
     <script defer src="script.js"></script>
   </head>
   <body>
+    <h1>YuzStack Library</h1>
+    <div class="new-book-btn-container">
+      <button class="new-book-btn">New Book</button>
+    </div>
+    <main class="library-container">
+      <!-- <div class="library-unit-card">
+        <h2>The Habbit</h2>
+        <p>J.R.R Tolkien</p>
+        <p>295 pages</p>
+        <p class="isRead-para">
+          <span class="read-status-text">Read ✅✅</span>
+          <span class="change-read-status-btn">Change status</span>
+        </p>
+        <span class="remove-book-btn">&#x2715;</span>
+      </div>
+      <div class="library-unit-card">
+        <h2>War and Peace</h2>
+        <p>Leo Tolstoy</p>
+        <p>823 pages</p>
+        <p class="isRead-para">
+          <span class="read-status-text">Not yet read ❌</span>
+          <span class="change-read-status-btn">Change status</span>
+        </p>
+        <span class="remove-book-btn">&#x2715;</span>
+      </div> -->
+    </main>
 
-  </body>git@github.com:YuzStack/37_Library-App.git
+    <!-- Modal Window -->
+    <dialog class="dialog">
+      <h2 class="headline">Enter Book Details</h2>
+      <form class="dialog-form" method="dialog">
+        <div class="unit-input-field">
+          <label for="book-title">Book Title:</label>
+          <!-- prettier-ignore -->
+          <input type="text" id="book-title" placeholder="Book title..." required />
+        </div>
+        <div class="unit-input-field">
+          <label for="book-title">Author:</label>
+          <input type="text" id="author" placeholder="Author..." required />
+        </div>
+        <div class="unit-input-field">
+          <label for="book-title">Pages:</label>
+          <!-- prettier-ignore -->
+          <input type="number" id="pages" placeholder="Number of pages..." required />
+        </div>
+        <div class="unit-input-field">
+          <label for="book-title">Have you read this book?</label>
+          <select name="options" id="options">
+            <option value="No">No</option>
+            <option value="Yes">Yes</option>
+          </select>
+        </div>
+        <div class="submit-btn-container">
+          <button class="submit-modal-btn">Add Book</button>
+        </div>
+      </form>
+    </dialog>
+  </body>
 </html>
