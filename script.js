@@ -16,17 +16,19 @@ const submitModalBtn = document.querySelector('.submit-modal-btn');
 // APP LOGICS
 const myLibrary = [];
 
-// Contructor Function ‼️
-const Book = function (title, author, pages, isRead = false) {
-  this.title = title;
-  this.author = author;
-  this.pages = pages;
-  this.isRead = isRead;
-};
+// The ES6+ Class Syntax ‼️
+class Book {
+  constructor(title, author, pages, isRead = false) {
+    this.title = title;
+    this.author = author;
+    this.pages = pages;
+    this.isRead = isRead;
+  }
 
-Book.prototype.toggleRead = function () {
-  this.isRead = !this.isRead;
-};
+  toggleRead() {
+    this.isRead = !this.isRead;
+  }
+}
 
 const addBookToLibrary = function (title, author, pages, isRead = false) {
   const newBook = new Book(title, author, pages, isRead);
@@ -65,7 +67,7 @@ dialogFormEl.addEventListener('submit', function () {
   const isRead = optionsEl.value === 'Yes' ? true : false;
 
   titleInputEl.value = authorInputEl.value = pagesInputEl.value = '';
-  optionsEl.value = 'No';
+  optionsEl.value = 'No'; // Reset the value of the select element
 
   const newBook = addBookToLibrary(title, author, pages, isRead);
   displayBook(newBook);
